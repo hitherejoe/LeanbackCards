@@ -6,7 +6,7 @@ android {
     buildToolsVersion "23.0.2"
 
     defaultConfig {
-        applicationId "com.hitherejoe.leanbackcards"
+        applicationId "com.hitherejoe.leanbackcards.sample"
         minSdkVersion 21
         targetSdkVersion 23
         versionCode 1
@@ -24,4 +24,5 @@ dependencies {
     compile fileTree(dir: 'libs', include: ['*.jar'])
     compile 'com.android.support:recyclerview-v7:23.1.1'
     compile 'com.android.support:leanback-v17:23.1.1'
+    compile project(':leanbackcards')
 }

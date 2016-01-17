@@ -1,14 +1,17 @@
-package com.hitherejoe.leanbackcards;
+package com.hitherejoe.sample;
 
 import android.content.Context;
 import android.content.res.TypedArray;
 import android.support.v17.leanback.widget.BaseCardView;
 import android.support.v4.content.ContextCompat;
 import android.util.AttributeSet;
+import android.util.Log;
 import android.view.ContextThemeWrapper;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.ProgressBar;
+
+import com.hitherejoe.leanbackcards.R;
 
 public class LoadingCardView extends BaseCardView {
 
@@ -19,7 +22,7 @@ public class LoadingCardView extends BaseCardView {
     }
 
     public LoadingCardView(Context context, AttributeSet attrs) {
-        this(context, attrs, android.support.v17.leanback.R.attr.imageCardViewStyle);
+        this(context, attrs, R.attr.imageCardViewStyle);
     }
 
     public LoadingCardView(Context context, int styleResId) {
@@ -44,20 +47,18 @@ public class LoadingCardView extends BaseCardView {
 
         LayoutInflater inflater = LayoutInflater.from(getContext());
         inflater.inflate(R.layout.view_loading_card, this);
-        TypedArray cardAttrs =
-                getContext().obtainStyledAttributes(
-                        styleResId, android.support.v17.leanback.R.styleable.lbImageCardView);
-
         mProgressBar = (ProgressBar) findViewById(R.id.progress_indicator);
-
-        cardAttrs.recycle();
     }
 
     public void setCardBackgroundColor(int colorResource) {
         setBackgroundColor(ContextCompat.getColor(getContext(), colorResource));
     }
 
-    public void isLoading(boolean isLoading) {
+    public boolean isLoading() {
+        return mProgressBar.getVisibility() == View.VISIBLE;
+    }
+
+    public void setLoading(boolean isLoading) {
         mProgressBar.setVisibility(isLoading ? View.VISIBLE : View.GONE);
     }
 
@@ -72,10 +73,8 @@ public class LoadingCardView extends BaseCardView {
         int style = null == attrs ? 0 : attrs.getStyleAttribute();
         if (0 == style) {
             TypedArray styledAttrs =
-                    context.obtainStyledAttributes(
-                            android.support.v17.leanback.R.styleable.LeanbackTheme);
-            style = styledAttrs.getResourceId(
-                    android.support.v17.leanback.R.styleable.LeanbackTheme_imageCardViewStyle, 0);
+                    context.obtainStyledAttributes(R.styleable.LeanbackTheme);
+            style = styledAttrs.getResourceId(R.styleable.LeanbackTheme_imageCardViewStyle, 0);
             styledAttrs.recycle();
         }
         return style;

@@ -1,3 +1,7 @@
 <resources>
     <string name="app_name">LeanbackCards</string>
+
+    <string name="header_text_loading_card">Loading card</string>
+    <string name="header_text_icon_card">Icon card</string>
+    <string name="header_text_tag_card">Tag card</string>
 </resources>

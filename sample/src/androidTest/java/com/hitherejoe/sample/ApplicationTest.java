@@ -1,4 +1,4 @@
-package com.hitherejoe.leanbackcards;
+package com.hitherejoe.sample;
 
 import android.app.Application;
 import android.test.ApplicationTestCase;

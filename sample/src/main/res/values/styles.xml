@@ -1,5 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
-    <style name="AppTheme" parent="@style/Theme.Leanback"></style>
+    <style name="AppTheme" parent="@style/Theme.Leanback"/>
+
+    <style name="LoadingCardStyle">
+        <item name="backgroundColor">@android:color/holo_red_dark</item>
+        <item name="isLoading">true</item>
+    </style>
 </resources>
