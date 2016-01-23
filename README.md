@@ -13,25 +13,34 @@ You can add a loading card in several ways:
 
 - By creating a new instance and setting it's properties programatically:
 
-`LoadingCardView(Context context)`
+```java
+LoadingCardView(Context context)
+```
 
 It's background color can be set using:
 
-`loadingCardView.setCardBackgroundColor(R.color.primary)`
+```java
+loadingCardView.setCardBackgroundColor(R.color.primary)
+```
 
-You can check it is loading and set it's loading state like so:
+and you can check it is loading and set it's loading state like so:
 
-```loadingCardView.setLoading(true);
+```java
+loadingCardView.setLoading(true);
 boolean isLoading = loadingCardView.isLoading();
 ```
 
 - By creating a new instance and passing in a style:
 
-```LoadingCardView(Context context, AttributeSet attrs)
+```java
+LoadingCardView(Context context, AttributeSet attrs)
+```
 
+```xml
 <style name="LoadingCardStyle">
     <item name="loadingBackgroundColor">@color/primary</item>
-</style>```
+</style>
+```
 
 ## Tag Card View
 
@@ -49,9 +58,12 @@ You can add an icon card in several ways:
 
 - By creating a new instance and setting it's properties programatically:
 
-`IconCardView(Context context)`
+```java
+IconCardView(Context context)
+```
 
-```iconCardView.setHeaderBackgroundColor(R.color.primary);
+```java
+iconCardView.setHeaderBackgroundColor(R.color.primary);
 iconCardView.setDetailBackgroundColor(R.color.primary_dark);
 iconCardView.setTitleText(getString(R.string.your_string));
 iconCardView.setDetailText(getString(R.string.your_string));
@@ -64,7 +76,8 @@ iconCardView.setIcon(R.drawable.ic_icon);
 
 `IconCardView(Context context, AttributeSet attrs)`
 
-```<style name="IconCardStyle">
+```xml
+<style name="IconCardStyle">
     <item name="titleBackgroundColor">@color/primary</item>
     <item name="detailBackgroundColor">@color/primary_dark</item>
     <item name="titleTextColor">@color/white</item>
