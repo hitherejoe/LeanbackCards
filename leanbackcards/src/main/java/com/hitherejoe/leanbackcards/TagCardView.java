@@ -79,6 +79,10 @@ public class TagCardView extends BaseCardView {
         mTagText.setText(string);
     }
 
+    public void setCardTextColor(int color) {
+        mTagText.setTextColor(color);
+    }
+
     public String getCardText() {
         return mTagText.getText().toString();
     }

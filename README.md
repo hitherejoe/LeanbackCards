@@ -14,7 +14,7 @@ You can add a loading card in several ways:
 - By creating a new instance and setting it's properties programatically:
 
 ```java
-LoadingCardView(Context context)
+LoadingCardView loadingCardView = new LoadingCardView(Context context)
 ```
 
 It's background color can be set using:
@@ -33,7 +33,7 @@ boolean isLoading = loadingCardView.isLoading();
 - By creating a new instance and passing in a style:
 
 ```java
-LoadingCardView(Context context, AttributeSet attrs)
+LoadingCardView loadingCardView = new LoadingCardView(Context context, AttributeSet attrs)
 ```
 
 ```xml
@@ -48,6 +48,35 @@ LoadingCardView(Context context, AttributeSet attrs)
     <img src="images/tag_card.png" alt="Tag Card"/>
 </p>
 
+You can add a tag card in several ways:
+
+- By creating a new instance and setting it's properties programatically:
+
+```java
+TagCardView tagCardView = new TagCardView(Context context)
+```
+
+```java
+tagCardView.setCardBackgroundColor(R.color.primary)
+tagCardView.setCardText(R.color.primary)
+tagCardView.setCardTextColor(R.color.primary)
+tagCardView.setCardIcon(R.drawable.ic_tag)
+```
+
+- By creating a new instance and passing in a style:
+
+```java
+TagCardView tagCardView = new TagCardView(Context context, AttributeSet attrs)
+```
+
+```xml
+<style name="TagCardStyle">
+    <item name="tagCardColor">@color/primary</item>
+    <item name="tagTextColor">@color/white</item>
+    <item name="tagIcon">@drawable/ic_tag</item>
+</style>
+```
+
 ## Icon Card View
 
 <p align="center">
@@ -59,7 +88,7 @@ You can add an icon card in several ways:
 - By creating a new instance and setting it's properties programatically:
 
 ```java
-IconCardView(Context context)
+IconCardView iconCardView = new IconCardView(Context context)
 ```
 
 ```java
@@ -74,7 +103,9 @@ iconCardView.setIcon(R.drawable.ic_icon);
 
 - By creating a new instance and passing in a style:
 
-`IconCardView(Context context, AttributeSet attrs)`
+```java
+IconCardView iconCardView = new IconCardView(Context context, AttributeSet attrs)
+```
 
 ```xml
 <style name="IconCardStyle">
