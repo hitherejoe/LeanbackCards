@@ -22,7 +22,8 @@ It's background color can be set using:
 You can check it is loading and set it's loading state like so:
 
 ```loadingCardView.setLoading(true);
-boolean isLoading = loadingCardView.isLoading();```
+boolean isLoading = loadingCardView.isLoading();
+```
 
 - By creating a new instance and passing in a style:
 
@@ -30,7 +31,8 @@ boolean isLoading = loadingCardView.isLoading();```
 
 ```<style name="LoadingCardStyle">
         <item name="loadingBackgroundColor">@color/primary</item>
-    </style>```
+    </style>
+```
 
 ## Tag Card View
 
@@ -56,7 +58,8 @@ iconCardView.setTitleText(getString(R.string.your_string));
 iconCardView.setDetailText(getString(R.string.your_string));
 iconCardView.setTitleTextColor(R.color.white);
 iconCardView.setDetailTextColor(R.color.white);
-iconCardView.setIcon(R.drawable.ic_icon);```
+iconCardView.setIcon(R.drawable.ic_icon);
+```
 
 - By creating a new instance and passing in a style:
 
@@ -68,4 +71,5 @@ iconCardView.setIcon(R.drawable.ic_icon);```
     <item name="titleTextColor">@color/white</item>
     <item name="detailTextColor">@color/white</item>
     <item name="headerIcon">@drawable/ic_icon</item>
-</style>```
+</style>
+```
