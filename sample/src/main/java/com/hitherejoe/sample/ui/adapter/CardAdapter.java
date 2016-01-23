@@ -8,9 +8,9 @@ import android.support.v17.leanback.widget.PresenterSelector;
 import com.hitherejoe.sample.ui.presenter.IconItemPresenter;
 import com.hitherejoe.sample.ui.presenter.LoadingPresenter;
 import com.hitherejoe.sample.ui.presenter.TagItemPresenter;
-import com.hitherejoe.sample.IconCardView;
-import com.hitherejoe.sample.LoadingCardView;
-import com.hitherejoe.sample.TagCardView;
+import com.hitherejoe.leanbackcards.IconCardView;
+import com.hitherejoe.leanbackcards.LoadingCardView;
+import com.hitherejoe.leanbackcards.TagCardView;
 
 
 public class CardAdapter extends ArrayObjectAdapter {

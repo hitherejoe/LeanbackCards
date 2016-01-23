@@ -1,12 +1,14 @@
 package com.hitherejoe.sample.ui.presenter;
 
 import android.content.Context;
+import android.support.v17.leanback.widget.ImageCardView;
 import android.support.v17.leanback.widget.Presenter;
 import android.support.v4.content.ContextCompat;
 import android.view.ViewGroup;
 
+import com.hitherejoe.sample.R;
 import com.hitherejoe.sample.ui.data.model.IconItem;
-import com.hitherejoe.sample.IconCardView;
+import com.hitherejoe.leanbackcards.IconCardView;
 
 public class IconItemPresenter extends Presenter {
 
@@ -18,8 +20,12 @@ public class IconItemPresenter extends Presenter {
     }
 
     @Override
-    public ViewHolder onCreateViewHolder(ViewGroup parent) {
-        IconCardView iconCardView = new IconCardView(parent.getContext());
+    public ViewHolder onCreateViewHolder(final ViewGroup parent) {
+        final IconCardView iconCardView = new IconCardView(parent.getContext(), R.style.IconCardStyle);
+      //  iconCardView.setHeaderBackgroundColor(android.R.color.holo_blue_bright);
+      //  iconCardView.setDetailBackgroundColor(android.R.color.holo_green_light);
+      //  iconCardView.setOptionTitleColor(android.R.color.white);
+      //  iconCardView.setOptionValueColor(android.R.color.white);
         return new ViewHolder(iconCardView);
     }
 
@@ -34,6 +40,7 @@ public class IconItemPresenter extends Presenter {
             if (value != null) optionView.setOptionValueText(iconItem.value);
             Context context = viewHolder.view.getContext();
             optionView.setOptionIcon(ContextCompat.getDrawable(context, iconItem.iconResource));
+
         }
     }
 

@@ -1,20 +1,19 @@
-package com.hitherejoe.sample;
+package com.hitherejoe.leanbackcards;
 
 import android.content.Context;
 import android.content.res.TypedArray;
 import android.support.v17.leanback.widget.BaseCardView;
 import android.support.v4.content.ContextCompat;
 import android.util.AttributeSet;
-import android.util.Log;
 import android.view.ContextThemeWrapper;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.ProgressBar;
-
-import com.hitherejoe.leanbackcards.R;
+import android.widget.RelativeLayout;
 
 public class LoadingCardView extends BaseCardView {
 
+    private RelativeLayout mLoadingLayout;
     private ProgressBar mProgressBar;
 
     public LoadingCardView(Context context) {
@@ -32,7 +31,7 @@ public class LoadingCardView extends BaseCardView {
 
     public LoadingCardView(Context context, AttributeSet attrs, int defStyleAttr) {
         super(getStyledContext(context, attrs, defStyleAttr), attrs, defStyleAttr);
-        buildLoadingCardView(getImageCardViewStyle(context, attrs, defStyleAttr));
+        buildLoadingCardView(getLoadingCardViewStyle(context, attrs, defStyleAttr));
     }
 
     @Override
@@ -45,9 +44,22 @@ public class LoadingCardView extends BaseCardView {
         setFocusableInTouchMode(false);
         setCardType(CARD_TYPE_MAIN_ONLY);
 
+        Context context = getContext();
+
         LayoutInflater inflater = LayoutInflater.from(getContext());
         inflater.inflate(R.layout.view_loading_card, this);
+        TypedArray cardAttrs = context.obtainStyledAttributes(styleResId, R.styleable.TagCardView);
+
+        mLoadingLayout = (RelativeLayout) findViewById(R.id.layout_loading);
         mProgressBar = (ProgressBar) findViewById(R.id.progress_indicator);
+
+        int backgroundColor =
+                cardAttrs.getInt(R.styleable.LoadingCardView_loadingBackgroundColor,
+                        ContextCompat.getColor(context, R.color.default_header));
+
+        mLoadingLayout.setBackgroundColor(backgroundColor);
+
+        cardAttrs.recycle();
     }
 
     public void setCardBackgroundColor(int colorResource) {
@@ -63,18 +75,18 @@ public class LoadingCardView extends BaseCardView {
     }
 
     private static Context getStyledContext(Context context, AttributeSet attrs, int defStyleAttr) {
-        int style = getImageCardViewStyle(context, attrs, defStyleAttr);
+        int style = getLoadingCardViewStyle(context, attrs, defStyleAttr);
         return new ContextThemeWrapper(context, style);
     }
 
-    private static int getImageCardViewStyle(Context context,
-                                             AttributeSet attrs,
-                                             int defStyleAttr) {
+    private static int getLoadingCardViewStyle(Context context,
+                                               AttributeSet attrs,
+                                               int defStyleAttr) {
         int style = null == attrs ? 0 : attrs.getStyleAttribute();
         if (0 == style) {
             TypedArray styledAttrs =
-                    context.obtainStyledAttributes(R.styleable.LeanbackTheme);
-            style = styledAttrs.getResourceId(R.styleable.LeanbackTheme_imageCardViewStyle, 0);
+                    context.obtainStyledAttributes(R.styleable.LoadingCardView);
+            style = styledAttrs.getResourceId(R.styleable.LoadingCardView_loadingCardTheme, 0);
             styledAttrs.recycle();
         }
         return style;

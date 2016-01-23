@@ -4,7 +4,14 @@
     <style name="AppTheme" parent="@style/Theme.Leanback"/>
 
     <style name="LoadingCardStyle">
-        <item name="backgroundColor">@android:color/holo_red_dark</item>
-        <item name="isLoading">true</item>
+        <item name="loadingBackgroundColor">@android:color/holo_red_dark</item>
     </style>
+
+    <style name="IconCardStyle">
+        <item name="titleBackgroundColor">@color/primary</item>
+        <item name="detailBackgroundColor">@color/primary_dark</item>
+        <item name="titleTextColor">@color/white</item>
+        <item name="detailTextColor">@color/white</item>
+    </style>
+
 </resources>

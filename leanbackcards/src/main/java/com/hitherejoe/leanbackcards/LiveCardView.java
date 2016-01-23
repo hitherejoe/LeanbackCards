@@ -1,4 +1,4 @@
-package com.hitherejoe.sample;
+package com.hitherejoe.leanbackcards;
 
 /**
  * Created by hitherejoe on 10/01/16.

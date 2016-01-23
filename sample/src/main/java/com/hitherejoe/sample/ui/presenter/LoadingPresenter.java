@@ -3,7 +3,7 @@ package com.hitherejoe.sample.ui.presenter;
 import android.support.v17.leanback.widget.Presenter;
 import android.view.ViewGroup;
 
-import com.hitherejoe.sample.LoadingCardView;
+import com.hitherejoe.leanbackcards.LoadingCardView;
 
 public class LoadingPresenter extends Presenter {
 

@@ -1,5 +1,22 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
-    <style name="AppTheme" parent="@style/Theme.Leanback"></style>
+    <style name="LoadingCardStyle">
+        <item name="loadingBackgroundColor">@color/default_header</item>
+    </style>
+
+    <style name="TagCardStyle">
+        <item name="tagCardColor">@color/default_header</item>
+        <item name="tagTextColor">@color/white</item>
+        <item name="tagIcon">@drawable/ic_tag</item>
+    </style>
+
+    <style name="IconCardStyle">
+        <item name="titleBackgroundColor">@color/default_header</item>
+        <item name="detailBackgroundColor">@color/default_detail</item>
+        <item name="titleTextColor">@color/white</item>
+        <item name="detailTextColor">@color/white</item>
+        <item name="headerIcon">@drawable/ic_tag</item>
+    </style>
+
 </resources>

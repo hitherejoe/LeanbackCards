@@ -10,9 +10,12 @@ import android.support.v17.leanback.widget.Presenter;
 import android.support.v17.leanback.widget.PresenterSelector;
 import android.support.v4.content.ContextCompat;
 
-import com.hitherejoe.sample.LoadingCardView;
-import com.hitherejoe.sample.TagCardView;
+import com.hitherejoe.leanbackcards.IconCardView;
+import com.hitherejoe.leanbackcards.LoadingCardView;
+import com.hitherejoe.leanbackcards.TagCardView;
 import com.hitherejoe.sample.ui.adapter.CardAdapter;
+import com.hitherejoe.sample.ui.adapter.OptionsAdapter;
+import com.hitherejoe.sample.ui.data.model.IconItem;
 import com.hitherejoe.sample.ui.presenter.HeaderItemPresenter;
 import com.hitherejoe.sample.R;
 
@@ -51,8 +54,12 @@ public class MainFragment extends BrowseFragment {
                 new HeaderItem(mRowsAdapter.size(), getString(R.string.header_text_loading_card));
         mRowsAdapter.add(new ListRow(gridLoadingCardHeader, mLoadingCardAdapter));
 
-        CardAdapter mIconCardAdapter = new CardAdapter(getActivity());
-      //  mIconCardAdapter.add(new LoadingCardView(getActivity()));
+        OptionsAdapter mIconCardAdapter = new OptionsAdapter(getActivity());
+        IconItem iconItem = new IconItem();
+        iconItem.title = "auto-loop";
+        iconItem.value = "enabled";
+        iconItem.iconResource = R.drawable.lopp;
+        mIconCardAdapter.addOption(iconItem);
         HeaderItem gridIconCardHeader =
                 new HeaderItem(mRowsAdapter.size(), getString(R.string.header_text_icon_card));
         mRowsAdapter.add(new ListRow(gridIconCardHeader, mIconCardAdapter));
