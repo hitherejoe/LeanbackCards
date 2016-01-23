@@ -9,7 +9,32 @@ customisable content cards. This includes:
     <img src="images/loading.gif" alt="Loading Card"/>
 </p>
 
-### U
+You can add a loading card in several ways:
+
+- By creating a new instance and setting it's properties programatically:
+
+```LoadingCardView(Context context)```
+
+It's background color can be set using:
+
+```loadingCardView.setCardBackgroundColor(R.color.primary)```
+
+You can check it is loading and set it's loading state like so:
+
+```
+loadingCardView.setLoading(true);
+boolean isLoading = loadingCardView.isLoading();
+```
+
+- By creating a new instance and passing in a style:
+
+```LoadingCardView(Context context, AttributeSet attrs)```
+
+```
+<style name="LoadingCardStyle">
+        <item name="loadingBackgroundColor">@color/primary</item>
+    </style>
+```
 
 ## Tag Card View
 
