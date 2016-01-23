@@ -49,6 +49,7 @@ iconCardView.setIcon(R.drawable.ic_icon);
     <item name="detailBackgroundColor">@color/primary_dark</item>
     <item name="titleTextColor">@color/white</item>
     <item name="detailTextColor">@color/white</item>
+    <item name="headerIcon">@drawable/ic_icon</item>
 </style>
 ```
 
