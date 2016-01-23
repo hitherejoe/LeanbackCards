@@ -27,12 +27,11 @@ boolean isLoading = loadingCardView.isLoading();
 
 - By creating a new instance and passing in a style:
 
-`LoadingCardView(Context context, AttributeSet attrs)`
+```LoadingCardView(Context context, AttributeSet attrs)
 
-```<style name="LoadingCardStyle">
-        <item name="loadingBackgroundColor">@color/primary</item>
-    </style>
-```
+<style name="LoadingCardStyle">
+    <item name="loadingBackgroundColor">@color/primary</item>
+</style>```
 
 ## Tag Card View
 
