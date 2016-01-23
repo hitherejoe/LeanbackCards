@@ -95,23 +95,23 @@ public class IconCardView extends BaseCardView {
         mLayout.setLayoutParams(lp);
     }
 
-    public void setOptionIcon(Drawable drawable) {
+    public void setIcon(Drawable drawable) {
         mIcon.setImageDrawable(drawable);
     }
 
-    public void setOptionTitleText(String titleText) {
+    public void setTitleText(String titleText) {
         mTitle.setText(titleText);
     }
 
-    public void setOptionValueText(String valueText) {
-        mValue.setText(valueText);
+    public void setDetailText(String detailText) {
+        mValue.setText(detailText);
     }
 
-    public void setOptionTitleColor(int color) {
+    public void setTitleTextColor(int color) {
         mTitle.setTextColor(color);
     }
 
-    public void setOptionValueColor(int color) {
+    public void setDetailTextColor(int color) {
         mValue.setTextColor(color);
     }
 

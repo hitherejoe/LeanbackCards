@@ -1,7 +1,6 @@
 package com.hitherejoe.sample.ui.presenter;
 
 import android.content.Context;
-import android.support.v17.leanback.widget.ImageCardView;
 import android.support.v17.leanback.widget.Presenter;
 import android.support.v4.content.ContextCompat;
 import android.view.ViewGroup;
@@ -24,8 +23,8 @@ public class IconItemPresenter extends Presenter {
         final IconCardView iconCardView = new IconCardView(parent.getContext(), R.style.IconCardStyle);
       //  iconCardView.setHeaderBackgroundColor(android.R.color.holo_blue_bright);
       //  iconCardView.setDetailBackgroundColor(android.R.color.holo_green_light);
-      //  iconCardView.setOptionTitleColor(android.R.color.white);
-      //  iconCardView.setOptionValueColor(android.R.color.white);
+      //  iconCardView.setTitleTextColor(android.R.color.white);
+      //  iconCardView.setValueTextColor(android.R.color.white);
         return new ViewHolder(iconCardView);
     }
 
@@ -35,11 +34,11 @@ public class IconItemPresenter extends Presenter {
             IconItem iconItem = (IconItem) item;
             IconCardView optionView = (IconCardView) viewHolder.view;
             optionView.setMainImageDimensions(GRID_ITEM_WIDTH, GRID_ITEM_HEIGHT);
-            optionView.setOptionTitleText(iconItem.title);
+            optionView.setTitleText(iconItem.title);
             String value = iconItem.value;
-            if (value != null) optionView.setOptionValueText(iconItem.value);
+            if (value != null) optionView.setDetailText(iconItem.value);
             Context context = viewHolder.view.getContext();
-            optionView.setOptionIcon(ContextCompat.getDrawable(context, iconItem.iconResource));
+            optionView.setIcon(ContextCompat.getDrawable(context, iconItem.iconResource));
 
         }
     }
