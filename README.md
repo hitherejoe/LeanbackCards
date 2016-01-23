@@ -18,5 +18,5 @@ customisable content cards. This includes:
 ## Icon Card View
 
 <p align="center">
-    <img src="images/icon_card" alt="Icon Card"/>
+    <img src="images/icon_card.png" alt="Icon Card"/>
 </p>
