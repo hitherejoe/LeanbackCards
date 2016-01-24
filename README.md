@@ -4,8 +4,8 @@
     <img src="images/title_image.png" alt="Live Card"/>
 </p>
 
-Leanback cards is a library for us with Android TV applications that provides an extended set of
-customisable content cards. This includes:
+Leanback cards is a Widget library for use with Android TV applications. It provides an extended set of
+customisable content cards to enhance your User Interfaces. The cards currently include:
 
 ## Live Card
 
