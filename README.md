@@ -1,5 +1,9 @@
 # LeanbackCards
 
+<p align="center">
+    <img src="images/title_image.png" alt="Live Card"/>
+</p>
+
 Leanback cards is a library for us with Android TV applications that provides an extended set of
 customisable content cards. This includes:
 
