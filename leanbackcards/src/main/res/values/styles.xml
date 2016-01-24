@@ -2,26 +2,26 @@
 <resources>
 
     <style name="LoadingCardStyle">
-        <item name="loadingBackgroundColor">@color/default_header</item>
+        <item name="loading_background_color">@color/default_header</item>
     </style>
 
     <style name="TagCardStyle">
-        <item name="tagCardColor">@color/default_header</item>
-        <item name="tagTextColor">@color/white</item>
-        <item name="tagIcon">@drawable/ic_tag</item>
+        <item name="tag_background_color">@color/default_header</item>
+        <item name="tag_text_color">@color/white</item>
+        <item name="tag_icon">@drawable/ic_tag</item>
     </style>
 
     <style name="IconCardStyle">
-        <item name="titleBackgroundColor">@color/default_header</item>
-        <item name="detailBackgroundColor">@color/default_detail</item>
-        <item name="titleTextColor">@color/white</item>
-        <item name="detailTextColor">@color/white</item>
-        <item name="headerIcon">@drawable/ic_tag</item>
+        <item name="icon_title_background_color">@color/default_header</item>
+        <item name="icon_detail_background_color">@color/default_detail</item>
+        <item name="icon_title_text_color">@color/white</item>
+        <item name="icon_detail_text_color">@color/white</item>
+        <item name="icon_header_icon">@drawable/ic_tag</item>
     </style>
 
     <style name="LiveCardStyle">
-        <item name="liveCardColor">@color/default_header</item>
-        <item name="liveTextColor">@color/white</item>
+        <item name="live_background_color">@color/default_header</item>
+        <item name="live_text_color">@color/white</item>
     </style>
 
 </resources>

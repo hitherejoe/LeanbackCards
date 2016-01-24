@@ -39,8 +39,8 @@ LiveCardView liveCardView = new LiveCardView(Context context, AttributeSet attrs
 
 ```xml
 <style name="LiveCardStyle">
-    <item name="liveCardColor">@color/primary</item>
-    <item name="liveTextColor">@color/white</item>
+    <item name="live_card_background_color">@color/primary</item>
+    <item name="live_text_color">@color/white</item>
 </style>
 ```
 
@@ -79,7 +79,7 @@ LoadingCardView loadingCardView = new LoadingCardView(Context context, Attribute
 
 ```xml
 <style name="LoadingCardStyle">
-    <item name="loadingBackgroundColor">@color/primary</item>
+    <item name="loading_background_color">@color/primary</item>
 </style>
 ```
 
@@ -112,9 +112,9 @@ TagCardView tagCardView = new TagCardView(Context context, AttributeSet attrs)
 
 ```xml
 <style name="TagCardStyle">
-    <item name="tagCardColor">@color/primary</item>
-    <item name="tagTextColor">@color/white</item>
-    <item name="tagIcon">@drawable/ic_tag</item>
+    <item name="tag_card_background_color">@color/primary</item>
+    <item name="tag_text_color">@color/white</item>
+    <item name="tag_icon">@drawable/ic_tag</item>
 </style>
 ```
 
@@ -150,10 +150,10 @@ IconCardView iconCardView = new IconCardView(Context context, AttributeSet attrs
 
 ```xml
 <style name="IconCardStyle">
-    <item name="titleBackgroundColor">@color/primary</item>
-    <item name="detailBackgroundColor">@color/primary_dark</item>
-    <item name="titleTextColor">@color/white</item>
-    <item name="detailTextColor">@color/white</item>
-    <item name="headerIcon">@drawable/ic_icon</item>
+    <item name="icon_title_background_color">@color/primary</item>
+    <item name="icon_detail_background_color">@color/primary_dark</item>
+    <item name="icon_title_text_color">@color/white</item>
+    <item name="icon_detail_text_color">@color/white</item>
+    <item name="icon_header_icon">@drawable/ic_icon</item>
 </style>
 ```

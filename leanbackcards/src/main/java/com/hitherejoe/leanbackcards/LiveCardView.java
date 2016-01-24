@@ -2,7 +2,6 @@ package com.hitherejoe.leanbackcards;
 
 import android.content.Context;
 import android.content.res.TypedArray;
-import android.graphics.drawable.Drawable;
 import android.support.v17.leanback.widget.BaseCardView;
 import android.support.v4.content.ContextCompat;
 import android.util.AttributeSet;
@@ -83,10 +82,10 @@ public class LiveCardView extends BaseCardView {
                 getContext().obtainStyledAttributes(styleResId, R.styleable.LiveCardView);
 
         int cardBackgroundColor =
-                cardAttrs.getInt(R.styleable.LiveCardView_liveCardColor,
+                cardAttrs.getInt(R.styleable.LiveCardView_live_background_color,
                         ContextCompat.getColor(context, R.color.default_detail));
         int titleTextColor =
-                cardAttrs.getInt(R.styleable.LiveCardView_liveTextColor,
+                cardAttrs.getInt(R.styleable.LiveCardView_live_text_color,
                         ContextCompat.getColor(context, R.color.white));
 
         int cardType =
@@ -157,7 +156,7 @@ public class LiveCardView extends BaseCardView {
         int style = null == attrs ? 0 : attrs.getStyleAttribute();
         if (0 == style) {
             TypedArray styledAttrs = context.obtainStyledAttributes(R.styleable.LiveCardView);
-            style = styledAttrs.getResourceId(R.styleable.LiveCardView_liveCardTheme, 0);
+            style = styledAttrs.getResourceId(R.styleable.LiveCardView_live_theme, 0);
             styledAttrs.recycle();
         }
         return style;

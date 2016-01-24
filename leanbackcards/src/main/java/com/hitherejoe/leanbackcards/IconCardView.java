@@ -57,20 +57,20 @@ public class IconCardView extends BaseCardView {
         inflater.inflate(R.layout.view_icon_card, this);
         TypedArray cardAttrs = context.obtainStyledAttributes(styleResId, R.styleable.IconCardView);
         int headerBackground =
-                cardAttrs.getInt(R.styleable.IconCardView_titleBackgroundColor,
+                cardAttrs.getInt(R.styleable.IconCardView_icon_title_background_color,
                         ContextCompat.getColor(context, R.color.default_header));
         int detailBackground =
-                cardAttrs.getInt(R.styleable.IconCardView_detailBackgroundColor,
+                cardAttrs.getInt(R.styleable.IconCardView_icon_detail_background_color,
                         ContextCompat.getColor(context, R.color.default_detail));
         int titleTextColor =
-                cardAttrs.getInt(R.styleable.IconCardView_titleTextColor,
+                cardAttrs.getInt(R.styleable.IconCardView_icon_title_text_color,
                         ContextCompat.getColor(context, R.color.white));
         int detailTextColor =
-                cardAttrs.getInt(R.styleable.IconCardView_detailTextColor,
+                cardAttrs.getInt(R.styleable.IconCardView_icon_detail_text_color,
                         ContextCompat.getColor(context, R.color.white));
 
         int drawableResource =
-                cardAttrs.getInt(R.styleable.IconCardView_headerIcon, R.drawable.ic_error);
+                cardAttrs.getInt(R.styleable.IconCardView_icon_header_icon, R.drawable.ic_error);
 
         mLayout = (RelativeLayout) findViewById(R.id.layout_option_card);
         mHeader = (RelativeLayout) findViewById(R.id.layout_header);
@@ -133,7 +133,7 @@ public class IconCardView extends BaseCardView {
         if (0 == style) {
             TypedArray styledAttrs =
                     context.obtainStyledAttributes(R.styleable.IconCardView);
-            style = styledAttrs.getResourceId(R.styleable.IconCardView_iconCardTheme, 0);
+            style = styledAttrs.getResourceId(R.styleable.IconCardView_icon_theme, 0);
             styledAttrs.recycle();
         }
         return style;

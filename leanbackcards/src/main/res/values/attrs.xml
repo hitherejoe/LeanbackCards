@@ -1,29 +1,29 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <declare-styleable name="LoadingCardView">
-        <attr name="loadingBackgroundColor" format="reference|color" />
-        <attr name="loadingCardTheme" format="reference|integer" />
+        <attr name="loading_background_color" format="reference|color" />
+        <attr name="loading_theme" format="reference|integer" />
     </declare-styleable>
 
     <declare-styleable name="TagCardView">
-        <attr name="tagCardColor" format="reference|color" />
-        <attr name="tagTextColor" format="reference|color" />
-        <attr name="tagIcon" format="reference|integer" />
-        <attr name="tagCardTheme" format="reference|integer" />
+        <attr name="tag_background_color" format="reference|color" />
+        <attr name="tag_text_color" format="reference|color" />
+        <attr name="tag_icon" format="reference|integer" />
+        <attr name="tag_theme" format="reference|integer" />
     </declare-styleable>
 
     <declare-styleable name="IconCardView">
-        <attr name="titleBackgroundColor" format="reference|color" />
-        <attr name="detailBackgroundColor" format="reference|color" />
-        <attr name="titleTextColor" format="reference|color" />
-        <attr name="detailTextColor" format="reference|color" />
-        <attr name="headerIcon" format="reference|integer" />
-        <attr name="iconCardTheme" format="reference|integer" />
+        <attr name="icon_title_background_color" format="reference|color" />
+        <attr name="icon_detail_background_color" format="reference|color" />
+        <attr name="icon_title_text_color" format="reference|color" />
+        <attr name="icon_detail_text_color" format="reference|color" />
+        <attr name="icon_header_icon" format="reference|integer" />
+        <attr name="icon_theme" format="reference|integer" />
     </declare-styleable>
 
     <declare-styleable name="LiveCardView">
-        <attr name="liveCardColor" format="reference|color" />
-        <attr name="liveTextColor" format="reference|color" />
-        <attr name="liveCardTheme" format="reference|integer" />
+        <attr name="live_background_color" format="reference|color" />
+        <attr name="live_text_color" format="reference|color" />
+        <attr name="live_theme" format="reference|integer" />
     </declare-styleable>
 </resources>

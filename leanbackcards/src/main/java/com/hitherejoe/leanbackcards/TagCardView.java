@@ -3,7 +3,6 @@ package com.hitherejoe.leanbackcards;
 import android.content.Context;
 import android.content.res.TypedArray;
 import android.support.v17.leanback.widget.BaseCardView;
-import android.support.v17.leanback.widget.ImageCardView;
 import android.support.v4.content.ContextCompat;
 import android.util.AttributeSet;
 import android.view.ContextThemeWrapper;
@@ -52,13 +51,13 @@ public class TagCardView extends BaseCardView {
         TypedArray cardAttrs = context.obtainStyledAttributes(styleResId, R.styleable.TagCardView);
 
         int backgroundColor =
-                cardAttrs.getInt(R.styleable.TagCardView_tagCardColor,
+                cardAttrs.getInt(R.styleable.TagCardView_tag_background_color,
                         ContextCompat.getColor(context, R.color.default_header));
         int textColor =
-                cardAttrs.getInt(R.styleable.TagCardView_tagTextColor,
+                cardAttrs.getInt(R.styleable.TagCardView_tag_text_color,
                         ContextCompat.getColor(context, R.color.white));
 
-        int drawableResource = cardAttrs.getInt(R.styleable.TagCardView_tagIcon, R.drawable.ic_tag);
+        int drawableResource = cardAttrs.getInt(R.styleable.TagCardView_tag_icon, R.drawable.ic_tag);
 
         RelativeLayout tagLayout = (RelativeLayout) findViewById(R.id.layout_tag);
         mTagIcon = (ImageView) findViewById(R.id.image_icon);
@@ -101,7 +100,7 @@ public class TagCardView extends BaseCardView {
         if (0 == style) {
             TypedArray styledAttrs =
                     context.obtainStyledAttributes(R.styleable.TagCardView);
-            style = styledAttrs.getResourceId(R.styleable.TagCardView_tagCardTheme, 0);
+            style = styledAttrs.getResourceId(R.styleable.TagCardView_tag_theme, 0);
             styledAttrs.recycle();
         }
         return style;

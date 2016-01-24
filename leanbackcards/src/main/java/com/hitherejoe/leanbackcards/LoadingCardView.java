@@ -54,7 +54,7 @@ public class LoadingCardView extends BaseCardView {
         mProgressBar = (ProgressBar) findViewById(R.id.progress_indicator);
 
         int backgroundColor =
-                cardAttrs.getInt(R.styleable.LoadingCardView_loadingBackgroundColor,
+                cardAttrs.getInt(R.styleable.LoadingCardView_loading_background_color,
                         ContextCompat.getColor(context, R.color.default_header));
 
         mLoadingLayout.setBackgroundColor(backgroundColor);
@@ -86,7 +86,7 @@ public class LoadingCardView extends BaseCardView {
         if (0 == style) {
             TypedArray styledAttrs =
                     context.obtainStyledAttributes(R.styleable.LoadingCardView);
-            style = styledAttrs.getResourceId(R.styleable.LoadingCardView_loadingCardTheme, 0);
+            style = styledAttrs.getResourceId(R.styleable.LoadingCardView_loading_theme, 0);
             styledAttrs.recycle();
         }
         return style;
