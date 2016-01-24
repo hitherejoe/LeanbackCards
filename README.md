@@ -13,7 +13,8 @@ customisable content cards to enhance your User Interfaces. The cards currently 
     <img src="images/live_card.gif" alt="Live Card"/>
 </p>
 
-You can add a live card in several ways:
+A live card allows you to show a looping video when the card view becomes focused, allowing your
+browsing experience to feel more dynamic. You can add a live card in several ways:
 
 - By creating a new instance and setting it's properties programatically:
 
@@ -50,7 +51,8 @@ LiveCardView liveCardView = new LiveCardView(Context context, AttributeSet attrs
     <img src="images/loading.gif" alt="Loading Card"/>
 </p>
 
-You can add a loading card in several ways:
+A loading card allows you to show a simple progress bar to make the user aware that content is being
+loaded. You can add a loading card in several ways:
 
 - By creating a new instance and setting it's properties programatically:
 
@@ -89,7 +91,7 @@ LoadingCardView loadingCardView = new LoadingCardView(Context context, Attribute
     <img src="images/tag_card.png" alt="Tag Card"/>
 </p>
 
-You can add a tag card in several ways:
+A tag card allows you to show an icon/text pair. You can add a tag card in several ways:
 
 - By creating a new instance and setting it's properties programatically:
 
@@ -124,7 +126,8 @@ TagCardView tagCardView = new TagCardView(Context context, AttributeSet attrs)
     <img src="images/icon_card.png" alt="Icon Card"/>
 </p>
 
-You can add an icon card in several ways:
+An icon card allows you to display a title/detail pair with an icon for visual representation. You
+can add an icon card in several ways:
 
 - By creating a new instance and setting it's properties programatically:
 
