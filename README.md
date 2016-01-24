@@ -39,7 +39,7 @@ LiveCardView liveCardView = new LiveCardView(Context context, AttributeSet attrs
 
 ```xml
 <style name="LiveCardStyle">
-    <item name="live_card_background_color">@color/primary</item>
+    <item name="live_background_color">@color/primary</item>
     <item name="live_text_color">@color/white</item>
 </style>
 ```
