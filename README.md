@@ -3,7 +3,44 @@
 Leanback cards is a library for us with Android TV applications that provides an extended set of
 customisable content cards. This includes:
 
-## Loading Card View
+## Live Card
+
+<p align="center">
+    <img src="images/live_card.gif" alt="Live Card"/>
+</p>
+
+You can add a live card in several ways:
+
+- By creating a new instance and setting it's properties programatically:
+
+```java
+LiveCardView liveCardView = new LiveCardView(Context context);
+```
+
+```java
+liveCardView.setVideoUrl(videoUrl);
+liveCardView.startVideo();
+liveCardView.stopVideo();
+liveCardView.setInfoAreaBackgroundColor(R.color.primary);
+liveCardView.setTitleText(getString(R.string.title));
+liveCardView.setTitleTextColor(R.color.white);
+liveCardView.stopVideo();
+```
+
+- By creating a new instance and passing in a style:
+
+```java
+LiveCardView liveCardView = new LiveCardView(Context context, AttributeSet attrs);
+```
+
+```xml
+<style name="LiveCardStyle">
+    <item name="liveCardColor">@color/primary</item>
+    <item name="liveTextColor">@color/white</item>
+</style>
+```
+
+## Loading Card
 
 <p align="center">
     <img src="images/loading.gif" alt="Loading Card"/>
@@ -42,7 +79,7 @@ LoadingCardView loadingCardView = new LoadingCardView(Context context, Attribute
 </style>
 ```
 
-## Tag Card View
+## Tag Card
 
 <p align="center">
     <img src="images/tag_card.png" alt="Tag Card"/>
@@ -77,7 +114,7 @@ TagCardView tagCardView = new TagCardView(Context context, AttributeSet attrs)
 </style>
 ```
 
-## Icon Card View
+## Icon Card
 
 <p align="center">
     <img src="images/icon_card.png" alt="Icon Card"/>

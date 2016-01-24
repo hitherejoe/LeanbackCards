@@ -18,5 +18,12 @@
         <attr name="titleTextColor" format="reference|color" />
         <attr name="detailTextColor" format="reference|color" />
         <attr name="headerIcon" format="reference|integer" />
+        <attr name="iconCardTheme" format="reference|integer" />
+    </declare-styleable>
+
+    <declare-styleable name="LiveCardView">
+        <attr name="liveCardColor" format="reference|color" />
+        <attr name="liveTextColor" format="reference|color" />
+        <attr name="liveCardTheme" format="reference|integer" />
     </declare-styleable>
 </resources>

@@ -133,7 +133,7 @@ public class IconCardView extends BaseCardView {
         if (0 == style) {
             TypedArray styledAttrs =
                     context.obtainStyledAttributes(R.styleable.IconCardView);
-            style = styledAttrs.getResourceId(R.style.IconCardStyle, 0);
+            style = styledAttrs.getResourceId(R.styleable.IconCardView_iconCardTheme, 0);
             styledAttrs.recycle();
         }
         return style;

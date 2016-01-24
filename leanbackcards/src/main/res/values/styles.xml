@@ -19,4 +19,9 @@
         <item name="headerIcon">@drawable/ic_tag</item>
     </style>
 
+    <style name="LiveCardStyle">
+        <item name="liveCardColor">@color/default_header</item>
+        <item name="liveTextColor">@color/white</item>
+    </style>
+
 </resources>

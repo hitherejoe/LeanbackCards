@@ -3,4 +3,5 @@
     <color name="white">#FFFFFF</color>
     <color name="default_header">#455A64</color>
     <color name="default_detail">#607D8B</color>
+    <color name="black_87pc">#607D8B</color>
 </resources>
