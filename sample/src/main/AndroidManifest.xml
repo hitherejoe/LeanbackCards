@@ -1,6 +1,8 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.hitherejoe.sample">
 
+    <uses-permission android:name="android.permission.INTERNET"/>
+
     <uses-feature android:name="android.software.leanback" android:required="true"/>
 
     <application

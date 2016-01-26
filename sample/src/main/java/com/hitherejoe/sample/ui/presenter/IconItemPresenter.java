@@ -14,17 +14,11 @@ public class IconItemPresenter extends Presenter {
     private static int GRID_ITEM_WIDTH = 350;
     private static int GRID_ITEM_HEIGHT = 400;
 
-    public IconItemPresenter() {
-
-    }
+    public IconItemPresenter() { }
 
     @Override
     public ViewHolder onCreateViewHolder(final ViewGroup parent) {
         final IconCardView iconCardView = new IconCardView(parent.getContext(), R.style.IconCardStyle);
-      //  iconCardView.setHeaderBackgroundColor(android.R.color.holo_blue_bright);
-      //  iconCardView.setDetailBackgroundColor(android.R.color.holo_green_light);
-      //  iconCardView.setTitleTextColor(android.R.color.white);
-      //  iconCardView.setValueTextColor(android.R.color.white);
         return new ViewHolder(iconCardView);
     }
 

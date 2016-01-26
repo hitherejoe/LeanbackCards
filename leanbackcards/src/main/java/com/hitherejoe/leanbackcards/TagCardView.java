@@ -57,21 +57,21 @@ public class TagCardView extends BaseCardView {
                 cardAttrs.getInt(R.styleable.TagCardView_tag_text_color,
                         ContextCompat.getColor(context, R.color.white));
 
-        int drawableResource = cardAttrs.getInt(R.styleable.TagCardView_tag_icon, R.drawable.ic_tag);
+        int drawableResource =
+                cardAttrs.getInt(R.styleable.TagCardView_tag_icon, R.drawable.ic_tag);
 
-        RelativeLayout tagLayout = (RelativeLayout) findViewById(R.id.layout_tag);
         mTagIcon = (ImageView) findViewById(R.id.image_icon);
         mTagText = (TextView) findViewById(R.id.text_tag);
 
-        tagLayout.setBackgroundColor(backgroundColor);
-        mTagText.setTextColor(textColor);
-        mTagIcon.setImageResource(drawableResource);
+        setCardBackgroundColor(backgroundColor);
+        setCardTextColor(textColor);
+        setCardIcon(drawableResource);
 
         cardAttrs.recycle();
     }
 
     public void setCardBackgroundColor(int colorResource) {
-        setBackgroundColor(ContextCompat.getColor(getContext(), colorResource));
+        setBackgroundColor(colorResource);
     }
 
     public void setCardText(String string) {

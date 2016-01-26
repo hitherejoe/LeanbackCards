@@ -31,9 +31,15 @@ public class LiveCardPresenter extends Presenter {
         final Context context = parent.getContext();
         sDefaultBackgroundColor = ContextCompat.getColor(context, R.color.primary);
         sSelectedBackgroundColor = ContextCompat.getColor(context, R.color.primary_dark);
-       // mDefaultCardImage = ContextCompat.getDrawable(context, R.drawable.ic_card_default);
+        mDefaultCardImage = ContextCompat.getDrawable(context, R.drawable.ic_play);
 
-        final LiveCardView cardView = new LiveCardView(parent.getContext());
+        final LiveCardView cardView = new LiveCardView(parent.getContext()) {
+            @Override
+            public void setSelected(boolean selected) {
+                updateCardBackgroundColor(this, selected);
+                super.setSelected(selected);
+            }
+        };
 
         cardView.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -79,18 +85,16 @@ public class LiveCardPresenter extends Presenter {
             Post post = (Post) item;
 
             final LiveCardView cardView = (LiveCardView) viewHolder.view;
-            if (post.videoUrl != null) {
-                cardView.setTitleText(post.description);
-                cardView.setContentText(post.username);
-                cardView.setMainContainerDimensions(CARD_WIDTH, CARD_HEIGHT);
-                cardView.setVideoUrl(post.videoUrl);
+            cardView.setTitleText(post.description);
+            cardView.setContentText(post.username);
+            cardView.setMainContainerDimensions(CARD_WIDTH, CARD_HEIGHT);
+            cardView.setVideoUrl(post.videoUrl);
 
-                Glide.with(cardView.getContext())
-                        .load(post.thumbnailUrl)
-                        .centerCrop()
-                        .error(mDefaultCardImage)
-                        .into(cardView.getMainImageView());
-            }
+            Glide.with(cardView.getContext())
+                    .load(post.thumbnail)
+                    .centerCrop()
+                    .error(mDefaultCardImage)
+                    .into(cardView.getMainImageView());
         }
     }
 

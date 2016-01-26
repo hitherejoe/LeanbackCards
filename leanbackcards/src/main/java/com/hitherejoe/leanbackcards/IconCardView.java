@@ -3,6 +3,8 @@ package com.hitherejoe.leanbackcards;
 import android.content.Context;
 import android.content.res.TypedArray;
 import android.graphics.drawable.Drawable;
+import android.support.annotation.ColorInt;
+import android.support.annotation.DrawableRes;
 import android.support.v17.leanback.widget.BaseCardView;
 import android.support.v4.content.ContextCompat;
 import android.util.AttributeSet;
@@ -18,7 +20,6 @@ import android.widget.TextView;
 public class IconCardView extends BaseCardView {
 
     private RelativeLayout mLayout;
-    private RelativeLayout mHeader;
     private LinearLayout mDetail;
     private ImageView mIcon;
     private TextView mTitle;
@@ -34,12 +35,12 @@ public class IconCardView extends BaseCardView {
 
     public IconCardView(Context context, int styleResId) {
         super(new ContextThemeWrapper(context, styleResId), null, 0);
-        buildptionCardView(styleResId);
+        buildIconCardView(styleResId);
     }
 
     public IconCardView(Context context, AttributeSet attrs, int defStyleAttr) {
         super(getStyledContext(context, attrs, defStyleAttr), attrs, defStyleAttr);
-        buildptionCardView(getIconCardViewStyle(context, attrs, defStyleAttr));
+        buildIconCardView(getIconCardViewStyle(context, attrs, defStyleAttr));
     }
 
     @Override
@@ -47,7 +48,7 @@ public class IconCardView extends BaseCardView {
         return false;
     }
 
-    private void buildptionCardView(int styleResId) {
+    private void buildIconCardView(int styleResId) {
         setFocusable(true);
         setFocusableInTouchMode(true);
         setCardType(CARD_TYPE_MAIN_ONLY);
@@ -55,12 +56,13 @@ public class IconCardView extends BaseCardView {
         Context context = getContext();
 
         LayoutInflater inflater = LayoutInflater.from(context);
-        View view = inflater.inflate(R.layout.view_icon_card, this);
+        inflater.inflate(R.layout.view_icon_card, this);
         TypedArray cardAttrs = context.obtainStyledAttributes(styleResId, R.styleable.IconCardView);
-        int headerBackground =
+
+        int headerBackgroundColor =
                 cardAttrs.getInt(R.styleable.IconCardView_icon_title_background_color,
                         ContextCompat.getColor(context, R.color.default_header));
-        int detailBackground =
+        int detailBackgroundColor =
                 cardAttrs.getInt(R.styleable.IconCardView_icon_detail_background_color,
                         ContextCompat.getColor(context, R.color.default_detail));
         int titleTextColor =
@@ -73,18 +75,17 @@ public class IconCardView extends BaseCardView {
         int drawableResource =
                 cardAttrs.getInt(R.styleable.IconCardView_icon_header_icon, R.drawable.ic_error);
 
-        mLayout = (RelativeLayout) view.findViewById(R.id.layout_option_card);
-      //  mHeader = (RelativeLayout) view.findViewById(R.id.layout_header);
-      //mDetail = (LinearLayout) view.findViewById(R.id.layout_detail);
-        mIcon = (ImageView) view.findViewById(R.id.image_option);
-        mTitle = (TextView) view.findViewById(R.id.text_option_title);
-        mValue = (TextView) view.findViewById(R.id.text_option_value);
+        mLayout = (RelativeLayout) findViewById(R.id.layout_option_card);
+        mDetail = (LinearLayout) findViewById(R.id.layout_detail);
+        mIcon = (ImageView) findViewById(R.id.image_option);
+        mTitle = (TextView) findViewById(R.id.text_option_title);
+        mValue = (TextView) findViewById(R.id.text_option_value);
 
-//        setHeaderBackgroundColor(headerBackground);
-//        setDetailBackgroundColor(detailBackground);
-        mTitle.setTextColor(titleTextColor);
-        mValue.setTextColor(detailTextColor);
-        mIcon.setImageResource(drawableResource);
+        setCardBackgroundColor(headerBackgroundColor);
+        setDetailBackgroundColor(detailBackgroundColor);
+        setTitleTextColor(titleTextColor);
+        setDetailTextColor(detailTextColor);
+        setIcon(drawableResource);
 
         cardAttrs.recycle();
     }
@@ -96,8 +97,12 @@ public class IconCardView extends BaseCardView {
         mLayout.setLayoutParams(lp);
     }
 
-    public void setIcon(Drawable drawable) {
+    public void setIcon(@DrawableRes Drawable drawable) {
         mIcon.setImageDrawable(drawable);
+    }
+
+    public void setIcon(@DrawableRes int drawable) {
+        mIcon.setImageResource(drawable);
     }
 
     public void setTitleText(String titleText) {
@@ -108,20 +113,20 @@ public class IconCardView extends BaseCardView {
         mValue.setText(detailText);
     }
 
-    public void setTitleTextColor(int color) {
+    public void setTitleTextColor(@ColorInt int color) {
         mTitle.setTextColor(color);
     }
 
-    public void setDetailTextColor(int color) {
+    public void setDetailTextColor(@ColorInt int color) {
         mValue.setTextColor(color);
     }
 
-    public void setHeaderBackgroundColor(int color) {
-        mHeader.setBackgroundResource(color);
+    public void setCardBackgroundColor(@ColorInt int color) {
+        setBackgroundColor(color);
     }
 
-    public void setDetailBackgroundColor(int color) {
-        mDetail.setBackgroundResource(color);
+    public void setDetailBackgroundColor(@ColorInt int color) {
+        mDetail.setBackgroundColor(color);
     }
 
     private static Context getStyledContext(Context context, AttributeSet attrs, int defStyleAttr) {

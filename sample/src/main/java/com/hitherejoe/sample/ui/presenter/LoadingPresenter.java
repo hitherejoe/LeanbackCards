@@ -1,6 +1,7 @@
 package com.hitherejoe.sample.ui.presenter;
 
 import android.support.v17.leanback.widget.Presenter;
+import android.support.v4.content.ContextCompat;
 import android.view.ViewGroup;
 
 import com.hitherejoe.leanbackcards.LoadingCardView;

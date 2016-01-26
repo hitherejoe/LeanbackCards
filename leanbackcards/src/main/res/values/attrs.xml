@@ -2,6 +2,7 @@
 <resources>
     <declare-styleable name="LoadingCardView">
         <attr name="loading_background_color" format="reference|color" />
+        <attr name="loading_progress_color" format="reference|color" />
         <attr name="loading_theme" format="reference|integer" />
     </declare-styleable>
 

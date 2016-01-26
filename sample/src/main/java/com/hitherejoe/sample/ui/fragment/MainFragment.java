@@ -6,15 +6,10 @@ import android.support.v17.leanback.widget.ArrayObjectAdapter;
 import android.support.v17.leanback.widget.HeaderItem;
 import android.support.v17.leanback.widget.ListRow;
 import android.support.v17.leanback.widget.ListRowPresenter;
-import android.support.v17.leanback.widget.OnItemViewSelectedListener;
 import android.support.v17.leanback.widget.Presenter;
 import android.support.v17.leanback.widget.PresenterSelector;
-import android.support.v17.leanback.widget.Row;
-import android.support.v17.leanback.widget.RowPresenter;
 import android.support.v4.content.ContextCompat;
 
-import com.hitherejoe.leanbackcards.IconCardView;
-import com.hitherejoe.leanbackcards.LiveCardView;
 import com.hitherejoe.leanbackcards.LoadingCardView;
 import com.hitherejoe.leanbackcards.TagCardView;
 import com.hitherejoe.sample.ui.adapter.CardAdapter;
@@ -82,7 +77,7 @@ public class MainFragment extends BrowseFragment {
         IconItem iconItem = new IconItem();
         iconItem.title = "auto-loop";
         iconItem.value = "enabled";
-        iconItem.iconResource = R.drawable.lopp;
+        iconItem.iconResource = R.drawable.ic_loop;
         mIconCardAdapter.addOption(iconItem);
         HeaderItem gridIconCardHeader =
                 new HeaderItem(mRowsAdapter.size(), getString(R.string.header_text_icon_card));
@@ -100,8 +95,9 @@ public class MainFragment extends BrowseFragment {
         Post post = new Post();
         post.username = "hitherejoe";
         post.description = "Just a video!";
-        post.thumbnailUrl = "https://scontent-lhr3-1.xx.fbcdn.net/hphotos-xft1/v/t1.0-9/12417967_736526203114731_7636627666986228009_n.jpg";
-        post.videoUrl = "http://v.cdn.vine.co/r/videos/CF9585B3A31290758684187713536_43febf64eb6.4.0.3440879595394339929.mp4";
+        post.thumbnail = R.drawable.hitherejoe;
+        post.videoUrl =
+                "http://v.cdn.vine.co/r/videos/CF9585B3A31290758684187713536_43febf64eb6.4.0.3440879595394339929.mp4";
         mVideoCardAdapter.addOption(post);
         HeaderItem gridLiveCardHeader =
                 new HeaderItem(mRowsAdapter.size(), getString(R.string.header_text_live_card));

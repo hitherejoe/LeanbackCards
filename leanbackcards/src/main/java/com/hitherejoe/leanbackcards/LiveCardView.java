@@ -16,12 +16,7 @@ import com.hitherejoe.leanbackcards.widget.PreviewCardView;
 
 public class LiveCardView extends BaseCardView {
 
-    public static final int CARD_TYPE_FLAG_IMAGE_ONLY = 0;
-    public static final int CARD_TYPE_FLAG_TITLE = 1;
-    public static final int CARD_TYPE_FLAG_CONTENT = 2;
-
     private PreviewCardView mPreviewCard;
-    private ViewGroup mInfoArea;
 
     private TextView mTitleView;
     private TextView mContentView;
@@ -76,7 +71,8 @@ public class LiveCardView extends BaseCardView {
         View view = inflater.inflate(R.layout.view_live_card, this);
 
         mPreviewCard = (PreviewCardView) view.findViewById(R.id.layout_preview_card);
-        mInfoArea = (ViewGroup) view.findViewById(R.id.info_field);
+        mTitleView = (TextView) findViewById(R.id.title_text);
+        mContentView = (TextView) findViewById(R.id.content_text);
 
         TypedArray cardAttrs =
                 getContext().obtainStyledAttributes(styleResId, R.styleable.LiveCardView);
@@ -84,37 +80,12 @@ public class LiveCardView extends BaseCardView {
         int cardBackgroundColor =
                 cardAttrs.getInt(R.styleable.LiveCardView_live_background_color,
                         ContextCompat.getColor(context, R.color.default_detail));
-        int titleTextColor =
+        int textColor =
                 cardAttrs.getInt(R.styleable.LiveCardView_live_text_color,
                         ContextCompat.getColor(context, R.color.white));
 
-        int cardType =
-                cardAttrs.getInt(
-                        R.styleable.lbImageCardView_lbImageCardViewType, CARD_TYPE_FLAG_IMAGE_ONLY);
-        boolean hasImageOnly = cardType == CARD_TYPE_FLAG_IMAGE_ONLY;
-        boolean hasTitle = (cardType & CARD_TYPE_FLAG_TITLE) == CARD_TYPE_FLAG_TITLE;
-        boolean hasContent = (cardType & CARD_TYPE_FLAG_CONTENT) == CARD_TYPE_FLAG_CONTENT;
-
-        if (hasImageOnly) {
-            removeView(mInfoArea);
-            cardAttrs.recycle();
-            return;
-        }
-
-        if (hasTitle) {
-            mTitleView = (TextView) inflater.inflate(
-                    R.layout.lb_image_card_view_themed_title, mInfoArea, false);
-            mInfoArea.addView(mTitleView);
-            setTitleTextColor(titleTextColor);
-        }
-
-        if (hasContent) {
-            mContentView = (TextView) inflater.inflate(
-                    R.layout.lb_image_card_view_themed_content, mInfoArea, false);
-            mInfoArea.addView(mContentView);
-        }
-
-        setInfoAreaBackgroundColor(cardBackgroundColor);
+        setTextColor(textColor);
+        setCardBackgroundColor(cardBackgroundColor);
 
         cardAttrs.recycle();
     }
@@ -130,20 +101,21 @@ public class LiveCardView extends BaseCardView {
         return mPreviewCard.getImageView();
     }
 
-    public void setInfoAreaBackgroundColor(int color) {
-        if (mInfoArea != null) mInfoArea.setBackgroundColor(color);
+    public void setCardBackgroundColor(int color) {
+        setBackgroundColor(color);
     }
 
     public void setTitleText(CharSequence text) {
-        if (mTitleView != null) mTitleView.setText(text);
-    }
-
-    public void setTitleTextColor(int color) {
-        if (mTitleView != null) mTitleView.setTextColor(color);
+        mTitleView.setText(text);
     }
 
     public void setContentText(CharSequence text) {
-        if (mContentView != null) mContentView.setText(text);
+        mContentView.setText(text);
+    }
+
+    public void setTextColor(int color) {
+        mTitleView.setTextColor(color);
+        mContentView.setTextColor(color);
     }
 
     public void setVideoUrl(String url) {
