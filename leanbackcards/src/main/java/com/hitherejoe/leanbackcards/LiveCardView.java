@@ -119,6 +119,17 @@ public class LiveCardView extends BaseCardView {
         cardAttrs.recycle();
     }
 
+    public void setMainContainerDimensions(int width, int height) {
+        ViewGroup.LayoutParams lp = mPreviewCard.getLayoutParams();
+        lp.width = width;
+        lp.height = height;
+        mPreviewCard.setLayoutParams(lp);
+    }
+
+    public final ImageView getMainImageView() {
+        return mPreviewCard.getImageView();
+    }
+
     public void setInfoAreaBackgroundColor(int color) {
         if (mInfoArea != null) mInfoArea.setBackgroundColor(color);
     }

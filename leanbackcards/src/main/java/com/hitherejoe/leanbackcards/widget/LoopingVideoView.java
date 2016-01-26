@@ -40,6 +40,13 @@ public class LoopingVideoView extends VideoView {
                 onVideoReadyListener.onVideoReady();
             }
         });
+        setOnErrorListener(new MediaPlayer.OnErrorListener() {
+            @Override
+            public boolean onError(MediaPlayer mp, int what, int extra) {
+                onVideoReadyListener.onVideoError();
+                return false;
+            }
+        });
         setVideoURI(Uri.parse(url));
     }
 
@@ -52,6 +59,7 @@ public class LoopingVideoView extends VideoView {
 
     public interface OnVideoReadyListener {
         void onVideoReady();
+        void onVideoError();
     }
 
 }

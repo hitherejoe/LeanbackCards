@@ -39,7 +39,6 @@ public class IconItemPresenter extends Presenter {
             if (value != null) optionView.setDetailText(iconItem.value);
             Context context = viewHolder.view.getContext();
             optionView.setIcon(ContextCompat.getDrawable(context, iconItem.iconResource));
-
         }
     }
 

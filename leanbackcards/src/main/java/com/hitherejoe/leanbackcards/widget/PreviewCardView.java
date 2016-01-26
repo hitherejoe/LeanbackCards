@@ -2,6 +2,7 @@ package com.hitherejoe.leanbackcards.widget;
 
 import android.content.Context;
 import android.util.AttributeSet;
+import android.util.Log;
 import android.view.View;
 import android.widget.FrameLayout;
 import android.widget.ImageView;
@@ -66,11 +67,20 @@ public class PreviewCardView extends FrameLayout {
                 mProgressCard.setVisibility(View.INVISIBLE);
                 mImageView.setVisibility(View.INVISIBLE);
             }
+
+            @Override
+            public void onVideoError() {
+                setNotPlayingViewState();
+            }
         });
     }
 
     public void setFinished() {
         mVideoView.stopMediaPlayer();
+        setNotPlayingViewState();
+    }
+
+    private void setNotPlayingViewState() {
         mImageView.setVisibility(View.VISIBLE);
         mVideoView.setVisibility(View.INVISIBLE);
         mOverlayView.setVisibility(View.INVISIBLE);

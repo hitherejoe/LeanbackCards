@@ -1,4 +1,4 @@
 include ':sample'
 
 include ':leanbackcards'
-project(':leanbackcards').projectDir = new File(settingsDir, '../TvCardViews/leanbackcards')
+project(':leanbackcards').projectDir = new File(settingsDir, '../LeanbackCards/leanbackcards')

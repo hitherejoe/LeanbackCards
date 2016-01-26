@@ -25,4 +25,6 @@ dependencies {
     compile 'com.android.support:recyclerview-v7:23.1.1'
     compile 'com.android.support:leanback-v17:23.1.1'
     compile project(':leanbackcards')
+
+    compile 'com.github.bumptech.glide:glide:3.6.1'
 }

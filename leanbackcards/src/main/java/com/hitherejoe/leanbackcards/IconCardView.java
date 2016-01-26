@@ -8,6 +8,7 @@ import android.support.v4.content.ContextCompat;
 import android.util.AttributeSet;
 import android.view.ContextThemeWrapper;
 import android.view.LayoutInflater;
+import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
@@ -54,7 +55,7 @@ public class IconCardView extends BaseCardView {
         Context context = getContext();
 
         LayoutInflater inflater = LayoutInflater.from(context);
-        inflater.inflate(R.layout.view_icon_card, this);
+        View view = inflater.inflate(R.layout.view_icon_card, this);
         TypedArray cardAttrs = context.obtainStyledAttributes(styleResId, R.styleable.IconCardView);
         int headerBackground =
                 cardAttrs.getInt(R.styleable.IconCardView_icon_title_background_color,
@@ -72,15 +73,15 @@ public class IconCardView extends BaseCardView {
         int drawableResource =
                 cardAttrs.getInt(R.styleable.IconCardView_icon_header_icon, R.drawable.ic_error);
 
-        mLayout = (RelativeLayout) findViewById(R.id.layout_option_card);
-        mHeader = (RelativeLayout) findViewById(R.id.layout_header);
-        mDetail = (LinearLayout) findViewById(R.id.layout_detail);
-        mIcon = (ImageView) findViewById(R.id.image_option);
-        mTitle = (TextView) findViewById(R.id.text_option_title);
-        mValue = (TextView) findViewById(R.id.text_option_value);
+        mLayout = (RelativeLayout) view.findViewById(R.id.layout_option_card);
+      //  mHeader = (RelativeLayout) view.findViewById(R.id.layout_header);
+      //mDetail = (LinearLayout) view.findViewById(R.id.layout_detail);
+        mIcon = (ImageView) view.findViewById(R.id.image_option);
+        mTitle = (TextView) view.findViewById(R.id.text_option_title);
+        mValue = (TextView) view.findViewById(R.id.text_option_value);
 
-        mHeader.setBackgroundColor(headerBackground);
-        mDetail.setBackgroundColor(detailBackground);
+//        setHeaderBackgroundColor(headerBackground);
+//        setDetailBackgroundColor(detailBackground);
         mTitle.setTextColor(titleTextColor);
         mValue.setTextColor(detailTextColor);
         mIcon.setImageResource(drawableResource);
