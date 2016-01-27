@@ -26,10 +26,9 @@ LiveCardView liveCardView = new LiveCardView(Context context);
 liveCardView.setVideoUrl(videoUrl);
 liveCardView.startVideo();
 liveCardView.stopVideo();
-liveCardView.setInfoAreaBackgroundColor(R.color.primary);
+liveCardView.setCardBackgroundColor(R.color.primary);
 liveCardView.setTitleText(getString(R.string.title));
-liveCardView.setTitleTextColor(R.color.white);
-liveCardView.stopVideo();
+liveCardView.setTextColor(R.color.white);
 ```
 
 - By creating a new instance and passing in a style:
@@ -70,6 +69,8 @@ and you can check it is loading and set it's loading state like so:
 
 ```java
 loadingCardView.setLoading(true);
+loadingCardView.setCardBackgroundColor(R.color.primary);
+loadingCardView.setProgressColor(R.color.white);
 boolean isLoading = loadingCardView.isLoading();
 ```
 
@@ -82,6 +83,7 @@ LoadingCardView loadingCardView = new LoadingCardView(Context context, Attribute
 ```xml
 <style name="LoadingCardStyle">
     <item name="loading_background_color">@color/primary</item>
+    <item name="loading_progress_color">@color/white</item>
 </style>
 ```
 
@@ -136,7 +138,7 @@ IconCardView iconCardView = new IconCardView(Context context)
 ```
 
 ```java
-iconCardView.setHeaderBackgroundColor(R.color.primary);
+iconCardView.setCardBackgroundColor(R.color.primary);
 iconCardView.setDetailBackgroundColor(R.color.primary_dark);
 iconCardView.setTitleText(getString(R.string.your_string));
 iconCardView.setDetailText(getString(R.string.your_string));
@@ -153,7 +155,7 @@ IconCardView iconCardView = new IconCardView(Context context, AttributeSet attrs
 
 ```xml
 <style name="IconCardStyle">
-    <item name="icon_title_background_color">@color/primary</item>
+    <item name="icon_card_background_color">@color/primary</item>
     <item name="icon_detail_background_color">@color/primary_dark</item>
     <item name="icon_title_text_color">@color/white</item>
     <item name="icon_detail_text_color">@color/white</item>
