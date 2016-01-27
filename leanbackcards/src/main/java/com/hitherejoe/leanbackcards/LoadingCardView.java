@@ -3,6 +3,7 @@ package com.hitherejoe.leanbackcards;
 import android.content.Context;
 import android.content.res.TypedArray;
 import android.graphics.PorterDuff;
+import android.support.annotation.ColorInt;
 import android.support.v17.leanback.widget.BaseCardView;
 import android.support.v4.content.ContextCompat;
 import android.util.AttributeSet;
@@ -68,11 +69,11 @@ public class LoadingCardView extends BaseCardView {
         cardAttrs.recycle();
     }
 
-    public void setCardBackgroundColor(int colorResource) {
-        setBackgroundColor(colorResource);
+    public void setCardBackgroundColor(@ColorInt int color) {
+        setBackgroundColor(color);
     }
 
-    public void setProgressColor(int color) {
+    public void setProgressColor(@ColorInt int color) {
         mProgressBar.getIndeterminateDrawable().setColorFilter(color, PorterDuff.Mode.SRC_IN);
     }
 

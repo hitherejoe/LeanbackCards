@@ -2,6 +2,7 @@ package com.hitherejoe.leanbackcards;
 
 import android.content.Context;
 import android.content.res.TypedArray;
+import android.support.annotation.ColorInt;
 import android.support.v17.leanback.widget.BaseCardView;
 import android.support.v4.content.ContextCompat;
 import android.util.AttributeSet;
@@ -101,7 +102,7 @@ public class LiveCardView extends BaseCardView {
         return mPreviewCard.getImageView();
     }
 
-    public void setCardBackgroundColor(int color) {
+    public void setCardBackgroundColor(@ColorInt int color) {
         setBackgroundColor(color);
     }
 
@@ -113,7 +114,7 @@ public class LiveCardView extends BaseCardView {
         mContentView.setText(text);
     }
 
-    public void setTextColor(int color) {
+    public void setTextColor(@ColorInt int color) {
         mTitleView.setTextColor(color);
         mContentView.setTextColor(color);
     }
