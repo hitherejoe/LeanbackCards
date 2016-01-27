@@ -5,7 +5,11 @@
 </p>
 
 Leanback cards is a Widget library for use with Android TV applications. It provides an extended set of
-customisable content cards to enhance your User Interfaces. The cards currently include:
+customisable content cards to enhance your User Interfaces. 
+
+Think of this as a playground to try out the cards quickly and easily - so feel free to take the code and use it for the components you need!
+
+The cards currently include:
 
 ## Live Card
 
@@ -23,6 +27,7 @@ LiveCardView liveCardView = new LiveCardView(Context context);
 ```
 
 ```java
+liveCardView.setVideoViewSize(width, height)
 liveCardView.setVideoUrl(videoUrl);
 liveCardView.startVideo();
 liveCardView.stopVideo();
