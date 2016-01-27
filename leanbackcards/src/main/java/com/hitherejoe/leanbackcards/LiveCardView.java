@@ -127,6 +127,10 @@ public class LiveCardView extends BaseCardView {
         mPreviewCard.setLoading();
     }
 
+    public void setVideoViewSize(int width, int height) {
+        mPreviewCard.setVideoViewSize(width, height);
+    }
+
     public void stopVideo() {
         mPreviewCard.setFinished();
     }

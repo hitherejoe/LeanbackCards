@@ -88,6 +88,8 @@ public class LiveCardPresenter extends Presenter {
             cardView.setTitleText(post.description);
             cardView.setContentText(post.username);
             cardView.setMainContainerDimensions(CARD_WIDTH, CARD_HEIGHT);
+            int size = (int) (CARD_WIDTH * 1.25);
+            cardView.setVideoViewSize(size, size);
             cardView.setVideoUrl(post.videoUrl);
 
             Glide.with(cardView.getContext())

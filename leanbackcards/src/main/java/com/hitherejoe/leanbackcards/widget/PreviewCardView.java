@@ -52,6 +52,10 @@ public class PreviewCardView extends FrameLayout {
         mVideoUrl = videoUrl;
     }
 
+    public void setVideoViewSize(int width, int height) {
+        mVideoView.setLayoutParams(new LayoutParams(width, height));
+    }
+
     public ImageView getImageView() {
         return mImageView;
     }
