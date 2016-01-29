@@ -9,7 +9,9 @@ customisable content cards to enhance your User Interfaces.
 
 To begin with, you''ll need to add the dependency to your project as below:
 
-```compile 'com.hitherejoe.leanback:leanbackcards:0.1.0'```
+```gradle
+compile 'com.hitherejoe.leanback:leanbackcards:0.1.0'
+```
 
 Think of this as a playground to try out the cards quickly and easily - so feel free to take the code and use it for the components you need!
 
